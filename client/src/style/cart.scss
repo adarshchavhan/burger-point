@@ -1,0 +1,202 @@
+@import './index.scss';
+
+.cart__page{
+    min-height: calc(100vh - 70px);
+    .container{
+        padding: 50px 0;
+        display: flex;
+        gap: 50px;
+        @include md{
+            gap: 30px;
+        }
+        @include sm{
+            flex-direction: column;
+        }
+        .item__list{
+            width: 100%;
+            h1{
+                font-size: 18px;
+                color: $text-color;
+                font-weight: 900;
+                display: flex;
+                align-items: center;
+                svg{
+                    font-size: 22px;
+                    margin-right: 5px;
+                    color: $primary-color;
+                }
+            }
+            hr{
+                margin-bottom: 25px;
+                border: 0;
+                height: 1px;
+                background: $bg-color;
+            }
+            > div{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                @include xs{
+                    gap: 15px;
+                }
+                .cart__item{
+
+                    background: $bg-color;
+                    padding: 15px 10px;
+                    padding-right: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 5px;
+                    @include xs{
+                        padding:10px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                    }
+                    .left{
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        @include xs{
+                            gap: 10px;
+                        }
+                        img{
+                            width: 80px;
+                            height: 80px;
+                            object-fit: contain;
+                            @include xs{
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+                        .text{
+                            h2{
+                                font-weight: 700;
+                                color: $text-color;
+                                font-size: 16px;
+                                margin-bottom: 5px;
+                            }
+                            p{
+                                color: $primary-color;
+                                font-weight: 700;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    .right{
+                        display: flex;
+                        border-radius: 10px;
+                        background: #fff;
+                        @include xs{
+                            margin-left: 80px;
+                        }
+                        button{
+                            color: #fff;
+                            background: $primary-color;
+                            font-size: 18px;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 10px;
+                        }
+                        .delete__btn{
+                            color: $primary-color;
+                            background: transparent;
+                            font-size: 15px;
+                        }
+                        > div{
+                            font-size: 14px;
+                            width: 40px;
+                            height: 30px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+            }
+            .empty__msg{
+                padding-top: 50px;
+                text-align: center;
+                p{
+                    font-weight: 600;
+                    color: gray;
+                }
+                a{
+                    @include topUp;
+                    padding: 10px 30px;
+                    color: #fff;
+                    background: $primary-color;
+                    width: fit-content;
+                    border-radius: 5px;
+                    font-weight: 500;
+                    margin: auto;
+                }
+            }
+        }
+        .price__list{
+            width: 350px;
+            flex-shrink: 0;
+            background: $bg-color;
+            border-radius: 5px;
+            padding: 20px;
+            @include md{
+                width: 300px;
+            }
+            @include sm{
+                width: 100%;
+            }
+            h1{
+                font-size: 18px;
+                color: $text-color;
+                font-weight: 900;
+                display: flex;
+                align-items: center;
+                svg{
+                    font-size: 22px;
+                    margin-right: 5px;
+                    color: $primary-color;
+                }
+            }
+            ul{
+                margin: 20px 0;
+                list-style: none;
+                li{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 0;
+                    align-items: center;
+                    @include sm{
+                        *{
+                            flex: none !important;
+                        }
+                    }
+                    b{
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $gray-text-color;
+                    }
+                    span{
+                        font-weight: 600;
+                        color: $text-color;
+                        font-size: 14px;
+                    }
+                }
+            }
+            button{
+                @include topUp;
+                color: #fff;
+                background: $primary-color;
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+}

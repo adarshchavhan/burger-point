@@ -1,0 +1,123 @@
+@import './index.scss';
+
+header{
+    height: 70px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    .backdrop{
+        width: 100%;
+        height: calc(100vh - 70px);
+        position: fixed;
+        top: 70px;
+        backdrop-filter: blur(3px);
+    }
+    .container{
+        align-items: center;
+        gap: 50px;
+        @include sm{
+            gap: 10px;
+        }
+        .menu__btn{
+            color: $text-color;
+            background: transparent;
+            font-size: 20px;
+            display: none;
+            @include sm{
+                display: block;
+                margin-right: 10px;
+            }
+        }
+        .logo{
+            font-size: 18px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: $primary-color;
+            @include sm{
+                font-size: 16px;
+                gap: 5px;
+            }
+            svg{
+                font-size: 26px;
+                @include sm{
+                    font-size: 26px;
+                }
+            }
+        }
+        .menu{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include md{
+                justify-content: flex-end;
+            }
+            nav{
+                a{
+                    padding: 15px;
+                    color: $gray-text-color;
+                    font-weight: 700;
+                    &.active{
+                        color: $primary-color;
+                    }
+                }
+                @include sm{
+                    position: fixed;
+                    top: 70px;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    background: #fff;
+                    width: 100%;
+                    height: 0px;
+                    overflow: hidden;
+                    transition: .2s ease-in-out;
+                    &.active{
+                        height: 170px;
+                    }
+                    a:hover{
+                        background: $bg-color;
+                    }
+                }
+            }
+            .btn__wrapper{
+                display: flex;
+                a, button{
+                    padding: 15px;
+                    background: transparent;
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $gray-text-color;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    position: relative;
+                    svg{
+                        font-size: 18px;
+                        color: $primary-color;
+                    }
+                    label{
+                        color: #fff;
+                        min-width: 15px;
+                        background: $primary-color;
+                        padding: 2px;
+                        font-size: 10px;
+                        text-align: center;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 10px;
+                        left: 25px;
+                    }
+                    span{
+                        @include xs{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

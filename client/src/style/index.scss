@@ -1,0 +1,95 @@
+// fonts
+$font1: 'Open sans', sans-serif;
+// $font2: 'Open sans', sans-serif;
+$font2:  'Merriweather', serif;
+
+// colors
+$primary-color: #f47600;
+$secondary-color: #6f3c2f;
+$bg-color: #f8f6f3;
+$text-color: #323232;
+$gray-text-color: #444;
+
+// mixins
+@mixin container{
+    width: calc(100% - 30px);
+    max-width: 1200px;
+    height: inherit;
+    margin: auto;
+    display: flex;
+}
+
+@mixin topUp{
+    position: relative;
+    top: 0;
+    transition: .2s ease-in-out;
+    &:hover{
+        top: -4px;
+        box-shadow: 0 5px 10px rgba(0,0,0,.15);
+    }
+}
+
+// mixin media query
+@mixin lg{
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin md{
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin sm{
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin xs{
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font1;
+    scroll-behavior: smooth;
+}
+
+body{
+    // background: $bg-color;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button{
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+input, textarea{
+    border: 1px solid lightgray;
+    outline: 0;
+    border-radius: 3px;
+    &:hover, &:focus{
+        border: 1px solid gray;
+    }
+}
+
+.container{
+    @include container;
+}

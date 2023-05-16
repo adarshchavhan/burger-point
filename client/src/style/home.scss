@@ -1,0 +1,244 @@
+@import './index.scss';
+
+.home__page {
+    width: 100%;
+    .hero {
+        background: $primary-color;
+        height: calc(100vh - 70px);
+
+        .container {
+            align-items: center;
+            gap: 50px;
+            @include sm{
+                align-items: center;
+                justify-content: center;
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .left {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                @include sm{
+                    flex: none;
+                    align-items: center;
+                }
+
+                h1 {
+                    font-size: 60px;
+                    color: #fff;
+                    font-weight: 700;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+
+                    svg {
+                        position: relative;
+                        top: 20px;
+                    }
+                    @include sm{
+                        font-size: 40px;
+                        font-weight: 800;
+                        svg{
+                            top: 10px;
+                        }
+                    }
+                }
+
+                h2 {
+                    opacity: .8;
+                    color: #fff;
+                    font-size: 16px;
+                    @include sm{
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+
+                a {
+                    @include topUp;
+                    width: fit-content;
+                    padding: 10px 30px;
+                    margin-top: 20px;
+                    background: #fff;
+                    color: $primary-color;
+                    font-weight: 700;
+                    font-size: 14px;
+                    border-radius: 20px;
+                }
+            }
+
+            .right {
+                flex: 1;
+
+                img {
+                    width: 100%;
+                    max-width: 550px;
+                }
+                @include sm{
+                    flex: none;
+                    img{
+                        max-width: 250px;
+                    }
+                }
+            }
+        }
+    }
+
+    .founder {
+        background: $bg-color;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        @include sm{
+            padding: 20px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            background: $primary-color;
+            border-radius: 50%;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: $text-color;
+            @include sm{
+                font-size: 22px;
+                font-weight: 800;
+            }
+        }
+
+        p {
+            max-width: 470px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 170%;
+            text-align: center;
+            color: $text-color;
+        }
+    }
+
+    .menu {
+        @include container;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 50px 0;
+        flex-wrap: wrap;
+        h1 {
+            padding: 5px;
+            font-size: 24px;
+            color: $primary-color;
+            font-weight: 900;
+            position: relative;
+            &::before{
+                content: '';
+                width: 20px;
+                height: 3px;
+                background: #555;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top:0;
+                margin: auto;
+                z-index: -1;
+                border-radius: 20px;
+            }
+            &::after{
+                content: '';
+                width: 40px;
+                height: 5px;
+                background: #555;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+                margin: auto;
+                z-index: -1;
+                border-radius: 20px;
+            }
+            @include xs{
+                font-size: 22px;
+            }
+        }
+
+        div {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            @include md{
+                gap: 25px;
+            }
+            
+            .menu__card {
+                @include topUp;
+                width: calc(100% / 4 - 25px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: $bg-color;
+                gap: 0;
+                border-radius: 20px;
+                padding: 15px 15px;
+                padding-bottom: 30px;
+                img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: contain;
+                }
+
+                h2 {
+                    font-size: 18px;
+                    color: $text-color;
+                    text-align: center;
+                    @include xs{
+                        font-size: 16px;
+                    }
+                }
+
+                p {
+                    margin-top: 15px;
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: $primary-color;
+                    @include xs{
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+
+                button{
+                    @include topUp;
+                    margin-top: 10px;
+                    padding: 10px 30px;
+                    color: #fff;
+                    background: $primary-color;
+                    border-radius: 5px;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+                @include lg{
+                    width: calc(100% / 3 - 30px);
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                }
+                @include md{
+                    width: calc(100% / 2 - 30px);
+                }
+                @include xs{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

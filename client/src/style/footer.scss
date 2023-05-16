@@ -1,0 +1,80 @@
+@import './index.scss';
+
+footer{
+    background: $secondary-color;
+    background: $primary-color;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        .top{
+            width: 100%;
+            padding-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .text{
+                h2{
+                    font-size: 24px;
+                    font-weight: 800;
+                    margin-bottom: 15px;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    svg{
+                        font-size: 28px;
+                    }
+                    @include xs{
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+                p{
+                    max-width: 400px;
+                    line-height: 170%;
+                    font-size: 14px;
+                    font-weight: 400;
+                    opacity: .9;
+                }
+            }
+            .social{
+                h4{
+                    font-size: 16px;
+                    text-align: right;
+                    @include xs{
+                        text-align: center;
+                    }
+                }
+                div{
+                    margin-top: 10px;
+                    display: flex;
+                    gap: 30px;
+                    a{
+                        @include topUp;
+                        color: #fff;
+                        font-size: 24px;
+                        &:hover{
+                            box-shadow: none;
+                        }
+                    }
+                    
+                }
+            }
+            @include sm{
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+        }
+        .copyrights{
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            @include xs{
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+@import './index.scss';
+
+.confirmorder__page{
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include xs{
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    form{
+        width: calc(100% - 30px);
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        h2{
+            color: $text-color;
+            font-size: 18px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0,0,0,.05);
+        }
+        .field{
+            background: $bg-color;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px;
+            label{
+                width: 100%;
+                padding: 15px;
+                cursor: pointer;
+                color: $gray-text-color;
+            }
+            input{
+                margin-right: 15px;
+                cursor: pointer;
+            }
+        }
+        button{
+            @include topUp;
+            padding: 10px;
+            color: #fff;
+            background: $text-color;
+        }
+    }
+}

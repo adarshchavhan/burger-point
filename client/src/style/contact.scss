@@ -1,0 +1,103 @@
+@import './index.scss';
+
+.contact__page{
+    min-height: calc(100vh - 70px);
+    h1{
+        width: 100%;
+        padding: 45px;
+        background: $primary-color;
+        color: #fff;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        font-family: $font2;
+        @include sm{
+            font-size: 28px;
+        }
+        @include xs{
+            padding: 30px;
+            font-size: 18px;
+        }
+    }
+    .container{
+        gap: 50px;
+        padding: 50px 0;
+        @include sm{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .left{
+            flex: 1;
+            padding: 50px;
+            @include xs{
+                padding: 0;
+            }
+            h2{
+                font-size: 24px;
+                font-weight: 700;
+                color: $primary-color;
+                @include xs{
+                    padding: 30px;
+                    font-size: 18px;
+                }
+            }
+            p{
+                color: $gray-text-color;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 170%;
+                margin: 15px 0;
+                @include xs{
+                    font-size: 14px;
+                }
+            }
+            div{
+                font-size: 16px;
+                font-weight: 600;
+                padding: 10px;
+                display: flex;
+                gap: 20px;
+                    svg{
+                        @include topUp;
+                        border-radius: 50%;
+                        padding: 10px;
+                        background: $primary-color;
+                        color: #fff;
+                        font-size: 44px;
+                    }
+            }
+        }
+        form{
+            @include container;
+            flex: 1;
+            padding: 50px;
+            max-width: 500px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            box-shadow:  0 0 10px rgba(0,0,0,.1);
+            gap: 25px;
+            @include xs{
+                padding: 25px;
+            }
+            input, textarea, button{
+                padding: 15px;
+                font-size: 14px;
+                color: $text-color;
+            }
+            textarea{
+                resize: vertical;
+            }
+            button{
+                @include topUp;
+                color: #fff;
+                background: $primary-color;
+                font-size: 16px;
+                padding: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
