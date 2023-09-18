@@ -10,6 +10,7 @@ exports.passportSetup = () => {
     }, async(accessToken, refreshToken, profile, done)=>{
         const {id, displayName:name, emails, photos } = profile;
         const user = await User.findOne({id});
+        console.log(user);
         if(user){
             done(null, user);
         }else{
