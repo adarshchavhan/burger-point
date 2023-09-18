@@ -9,7 +9,7 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 router.get('/google/callback', passport.authenticate('google', {
-    successRedirect: process.env.CLIENT_URL
+    successRedirect: 'https://burgerpoint21.netlify.com'
 }))
 
 router.get('/me', auth, myProfile);
