@@ -4,7 +4,7 @@ import { RiGoogleFill } from 'react-icons/ri'
 const Login = () => {
 
   const handleGoogleLogin = () => {
-    window.open(`${import.meta.env.VITE_BASE_URL}/auth/google`, '_self')
+    window.open(`${import.meta.env.VITE_BASE_URL}/auth/google/callback`, '_self')
   }
 
   return (
