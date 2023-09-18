@@ -14,7 +14,8 @@ exports.passportSetup = () => {
             done(null, user);
         }else{
             const newUser = await User.create({
-                id, name,
+                id: profile.id,
+                name: profile.displayName,
                 email: emails[0].value,
                 photo: photos[0].value
             });
